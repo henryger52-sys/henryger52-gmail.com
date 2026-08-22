@@ -1,0 +1,22 @@
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+*secret*
+.aws/credentials
+*serviceaccount*.json
+
+# Dependencies / build output
+node_modules/
+dist/
+build/
+
+# Local tool config
+.claude/
+.qodo/
+
+# OS
+.DS_Store
+Thumbs.db
