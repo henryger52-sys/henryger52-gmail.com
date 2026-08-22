@@ -9,7 +9,9 @@
 
 ## About
 
-A single-page marketing site for a container shipping and freight forwarding business. It presents services (FCL, LCL, reefer & special cargo, customs documentation), trade lanes, and an enquiry form that lets prospective customers request a shipping quote directly from the page.
+A single-page marketing site for a container shipping and freight forwarding business. It presents services (FCL, LCL, reefer & special cargo, customs documentation), a global port network with live-status manifest, a cargo & data security section, a free downloadable security checklist (email-gated lead magnet), and an enquiry form that lets prospective customers request a shipping quote directly from the page.
+
+Built with on-page SEO in place: canonical tag, Open Graph/Twitter meta, JSON-LD `Organization` schema, `robots.txt`, and `sitemap.xml`.
 
 ## Installation
 
@@ -25,12 +27,14 @@ This is a static site with no build step — plain HTML, CSS, and JavaScript.
    npx serve .
    ```
 
-### Enquiry form
+### Forms
 
-The quote request form posts to [FormSubmit](https://formsubmit.co) via AJAX (`script.js`). Replace the placeholder address in the form's `action` attribute in `index.html` with the destination email before going live:
+Both the quote request form (`#enquiryForm`) and the checklist lead-magnet form (`#checklistForm`) post to [FormSubmit](https://formsubmit.co) via AJAX (`script.js`). Replace the placeholder address in **both** forms' `action` attributes in `index.html` with the destination email before going live:
 
 ```html
 <form id="enquiryForm" class="enquiry-form" action="https://formsubmit.co/your-email@example.com" method="POST">
+...
+<form id="checklistForm" class="gate-form" action="https://formsubmit.co/your-email@example.com" method="POST">
 ```
 
 ## Deployment
