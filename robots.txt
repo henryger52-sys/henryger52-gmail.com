@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://henryger52-sys.github.io/henryger52-gmail.com/sitemap.xml

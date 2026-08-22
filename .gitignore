@@ -17,6 +17,8 @@ build/
 .claude/*
 !.claude/skills/
 .qodo/
+__pycache__/
+*.pyc
 
 # OS
 .DS_Store
