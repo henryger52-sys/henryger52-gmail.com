@@ -77,6 +77,39 @@ checklistForm.addEventListener('submit', async (e) => {
   }
 });
 
+// WhatsApp chat widget
+const waWidget = document.getElementById('waWidget');
+const waFab = document.getElementById('waFab');
+const waPanel = document.getElementById('waPanel');
+const waPanelClose = document.getElementById('waPanelClose');
+
+function openWaPanel() {
+  waPanel.hidden = false;
+  waWidget.classList.add('open');
+  waFab.setAttribute('aria-expanded', 'true');
+}
+
+function closeWaPanel() {
+  waPanel.hidden = true;
+  waWidget.classList.remove('open');
+  waFab.setAttribute('aria-expanded', 'false');
+}
+
+waFab.addEventListener('click', () => {
+  if (waPanel.hidden) openWaPanel();
+  else closeWaPanel();
+});
+
+waPanelClose.addEventListener('click', closeWaPanel);
+
+document.addEventListener('click', (e) => {
+  if (!waPanel.hidden && !waWidget.contains(e.target)) closeWaPanel();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !waPanel.hidden) closeWaPanel();
+});
+
 // Subtle scroll reveal for section headings (respects reduced motion)
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
