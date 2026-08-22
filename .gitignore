@@ -14,7 +14,8 @@ dist/
 build/
 
 # Local tool config
-.claude/
+.claude/*
+!.claude/skills/
 .qodo/
 
 # OS
